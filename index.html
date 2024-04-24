@@ -8,11 +8,18 @@
     <title>实时空投计算器</title>
     <script>
         function calculateAirdrop() {
-            var yourPoints = document.getElementById('yourPoints').value;
-            var totalPoints = document.getElementById('totalPoints').value;
+            var yourPointsInput = document.getElementById('yourPoints').value;
+            var totalPointsInput = document.getElementById('totalPoints').value;
+
+            // 移除数字中的逗号
+            var yourPoints = yourPointsInput.replace(/,/g, '');
+            var totalPoints = totalPointsInput.replace(/,/g, '');
+
             var airdropTotal = 50000000;  // 空投总量，这里是5000万枚
 
             if (totalPoints > 0 && !isNaN(yourPoints) && !isNaN(totalPoints)) {
+                yourPoints = parseFloat(yourPoints);
+                totalPoints = parseFloat(totalPoints);
                 var ratio = yourPoints / totalPoints;
                 var airdropAmount = ratio * airdropTotal;
                 document.getElementById('result').innerHTML = "你的积分占比是: " + ratio.toFixed(4) + "<br>" +
