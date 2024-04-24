@@ -42,7 +42,7 @@ function calculateAirdrop() {
         yourPoints = parseFloat(yourPoints);
         var ratio = yourPoints / globalLoyaltyPoints;
         var airdropAmount = ratio * airdropTotal;
-        document.getElementById('result').innerHTML = "你将获得的空投数是: " + Math.round(airdropAmount) + " 枚";
+        document.getElementById('result').innerHTML = "空投数是: " + Math.round(airdropAmount) + " 枚ethfi";
     } else {
         document.getElementById('result').innerHTML = "请确保总积分大于0且输入的是有效数字。";
     }
